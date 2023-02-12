@@ -1,24 +1,24 @@
-import 'package:ecommerce_app/screens/signup_screen.dart';
-import 'package:ecommerce_app/widgets/custom_button.dart';
-import 'package:ecommerce_app/widgets/custom_outline_btn.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../widgets/custom_button.dart';
 import '../widgets/custom_textfield.dart';
 import '../widgets/outline_btn_with_image.dart';
+import 'login_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
 
   // this will avoid any memory leaks
   @override
@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  "Welcome",
+                  "Get Started",
                   style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
@@ -55,10 +55,28 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 25,
                 ),
                 CustomTextField(
+                  label: "Enter your Name",
+                  icon: const Icon(Icons.person_outline_rounded),
+                  obscureText: false,
+                  controller: nameController,
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                CustomTextField(
                   label: "Enter your Email",
                   icon: const Icon(Icons.email_rounded),
-                  obscureText: false,
+                  obscureText: true,
                   controller: emailController,
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                CustomTextField(
+                  label: "Enter your Phone No.",
+                  icon: const Icon(Icons.numbers_rounded),
+                  obscureText: false,
+                  controller: phoneController,
                 ),
                 const SizedBox(
                   height: 12,
@@ -69,15 +87,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   obscureText: true,
                   controller: passwordController,
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    child: const Text("Forget Password ?"),
-                    onPressed: () {},
-                  ),
+                const SizedBox(
+                  height: 12,
                 ),
                 CustomButton(
-                  text: "LOGIN",
+                  text: "SIGNUP",
                   onPress: () {},
                 ),
                 const SizedBox(
@@ -95,14 +109,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       image: AssetImage("assets/images/google.png"),
                       height: 22,
                     ),
-                    label: "Sign In with google",
+                    label: "Sign Up with google",
                     onPress: () {}),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Don't have an Account?"),
+                    const Text("Already have an Account?"),
                     TextButton(
-                      child: const Text("SIGNUP"),
+                      child: const Text("LOGIN"),
                       onPressed: () {
                         Navigator.pop(context);
                       },

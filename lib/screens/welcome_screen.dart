@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/screens/login_screen.dart';
+import 'package:ecommerce_app/screens/signup_screen.dart';
 import 'package:ecommerce_app/widgets/custom_button.dart';
 import 'package:ecommerce_app/widgets/custom_outline_btn.dart';
 import 'package:flutter/material.dart';
@@ -59,7 +60,10 @@ class WelcomeScreen extends StatelessWidget {
                       child: CustomButton(
                         text: "SIGNUP",
                         onPress: () {
-                          print("SIGNUP");
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignupScreen()));
                         },
                       ),
                     ),
