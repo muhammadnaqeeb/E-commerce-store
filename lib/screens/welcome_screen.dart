@@ -1,12 +1,7 @@
-import 'dart:ui';
-
+import 'package:ecommerce_app/screens/login_screen.dart';
 import 'package:ecommerce_app/widgets/custom_button.dart';
 import 'package:ecommerce_app/widgets/custom_outline_btn.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
-import '../constants.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -25,8 +20,9 @@ class WelcomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Image(
-                    image: const AssetImage("assets/images/welcome.png"),
-                    height: height * 0.6),
+                  image: const AssetImage("assets/images/welcome.png"),
+                  height: height * 0.6,
+                ),
                 Column(
                   children: const [
                     Text(
@@ -44,15 +40,28 @@ class WelcomeScreen extends StatelessWidget {
                   ],
                 ),
                 Row(
-                  children: const [
+                  children: [
                     Expanded(
-                      child: CustomOutlineBtn(text: "LOGIN"),
+                      child: CustomOutlineBtn(
+                        text: "LOGIN",
+                        onPress: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
+                        },
+                      ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Expanded(
-                      child: CustomButton(text: "SIGNUP"),
+                      child: CustomButton(
+                        text: "SIGNUP",
+                        onPress: () {
+                          print("SIGNUP");
+                        },
+                      ),
                     ),
                   ],
                 )

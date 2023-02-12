@@ -6,21 +6,23 @@ import '../constants.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
-  const CustomButton({super.key, required this.text});
+  final VoidCallback onPress;
+  const CustomButton({super.key, required this.text, required this.onPress});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPress,
       style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4),
-          ),
-          backgroundColor: tPrimaryColor,
-          foregroundColor: Colors.white,
-          elevation: 0,
-          side: const BorderSide(color: tPrimaryColor),
-          padding: const EdgeInsets.symmetric(vertical: 15)),
+        minimumSize: const Size(double.infinity, 50),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
+        backgroundColor: tPrimaryColor,
+        foregroundColor: Colors.white,
+        elevation: 0,
+        side: const BorderSide(color: tPrimaryColor),
+      ),
       child: Text(text),
     );
   }
