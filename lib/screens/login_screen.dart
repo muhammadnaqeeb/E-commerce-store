@@ -7,6 +7,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import '../widgets/custom_textfield.dart';
+import '../widgets/forget_password_button.dart';
 import '../widgets/outline_btn_with_image.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -73,7 +74,51 @@ class _LoginScreenState extends State<LoginScreen> {
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     child: const Text("Forget Password ?"),
-                    onPressed: () {},
+                    onPressed: () {
+                      showModalBottomSheet(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        context: context,
+                        builder: (context) => Container(
+                          padding: const EdgeInsets.all(30),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Make Selection!",
+                                style: TextStyle(
+                                    fontSize: 27, fontWeight: FontWeight.bold),
+                              ),
+                              const Text(
+                                  "Select one of the option given below to reset your password"),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              ForgetPasswordButtonWidget(
+                                  btnIcon: const Icon(
+                                    Icons.email_rounded,
+                                    size: 60,
+                                  ),
+                                  title: "Email",
+                                  subTitle: "Reset via Mail Verification",
+                                  onPress: () {}),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              ForgetPasswordButtonWidget(
+                                btnIcon: const Icon(
+                                  Icons.mobile_friendly_rounded,
+                                  size: 60,
+                                ),
+                                title: "Phone No",
+                                subTitle: "Reset via Phone Verification",
+                                onPress: () {},
+                              )
+                            ],
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 ),
                 CustomButton(
