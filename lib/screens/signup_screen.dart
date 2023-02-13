@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/screens/otp_verification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -93,7 +94,12 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
                 CustomButton(
                   text: "SIGNUP",
-                  onPress: () {},
+                  onPress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OtpVerificationScreen()));
+                  },
                 ),
                 const SizedBox(
                   height: 12,
