@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../constants.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_textfield.dart';
 import '../widgets/outline_btn_with_image.dart';
@@ -45,7 +46,7 @@ class _SignupScreenState extends State<SignupScreen> {
               children: [
                 const Text(
                   "Get Started",
-                  style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                  style: kHeadingStyle,
                 ),
                 const SizedBox(
                   height: 2,

@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPasswordButtonWidget extends StatelessWidget {
@@ -28,7 +29,13 @@ class ForgetPasswordButtonWidget extends StatelessWidget {
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text(title), Text(subTitle)],
+              children: [
+                Text(
+                  title,
+                  style: kSubHeadingStyle,
+                ),
+                Text(subTitle),
+              ],
             )
           ],
         ),

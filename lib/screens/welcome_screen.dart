@@ -4,6 +4,8 @@ import 'package:ecommerce_app/widgets/custom_button.dart';
 import 'package:ecommerce_app/widgets/custom_outline_btn.dart';
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
+
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -28,8 +30,7 @@ class WelcomeScreen extends StatelessWidget {
                   children: const [
                     Text(
                       "Shop, Swipe & Smile.",
-                      style:
-                          TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                      style: kHeadingStyle,
                     ),
                     SizedBox(
                       height: 5,

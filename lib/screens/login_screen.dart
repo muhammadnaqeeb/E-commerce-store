@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/screens/forgetPasswordScreens/forget_password_mail_screen.dart';
 import 'package:ecommerce_app/screens/signup_screen.dart';
 import 'package:ecommerce_app/widgets/custom_button.dart';
 import 'package:ecommerce_app/widgets/custom_outline_btn.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../constants.dart';
 import '../widgets/custom_textfield.dart';
 import '../widgets/forget_password_button.dart';
 import '../widgets/outline_btn_with_image.dart';
@@ -46,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 const Text(
                   "Welcome",
-                  style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                  style: kHeadingStyle,
                 ),
                 const SizedBox(
                   height: 2,
@@ -86,8 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             children: [
                               const Text(
                                 "Make Selection!",
-                                style: TextStyle(
-                                    fontSize: 27, fontWeight: FontWeight.bold),
+                                style: kHeadingStyle,
                               ),
                               const Text(
                                   "Select one of the option given below to reset your password"),
@@ -101,7 +102,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                   title: "Email",
                                   subTitle: "Reset via Mail Verification",
-                                  onPress: () {}),
+                                  onPress: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ForgetPasswordMailScreen()));
+                                  }),
                               const SizedBox(
                                 height: 20,
                               ),
