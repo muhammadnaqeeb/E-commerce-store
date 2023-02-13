@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/screens/otp_verification_screen.dart';
+import 'package:ecommerce_app/widgets/country_textField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -74,10 +75,9 @@ class _SignupScreenState extends State<SignupScreen> {
                 const SizedBox(
                   height: 12,
                 ),
-                CustomTextField(
-                  label: "Enter your Phone No.",
+                CountryTextField(
+                  label: "Phone No.",
                   icon: const Icon(Icons.numbers_rounded),
-                  obscureText: false,
                   controller: phoneController,
                 ),
                 const SizedBox(
