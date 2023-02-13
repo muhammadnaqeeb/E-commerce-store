@@ -1,10 +1,12 @@
 import 'package:ecommerce_app/screens/otp_verification_screen.dart';
 import 'package:ecommerce_app/widgets/country_textField.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import '../constants.dart';
+import '../services/firebase_auth_methods.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_textfield.dart';
 import '../widgets/outline_btn_with_image.dart';
@@ -117,7 +119,10 @@ class _SignupScreenState extends State<SignupScreen> {
                       height: 22,
                     ),
                     label: "Sign Up with google",
-                    onPress: () {}),
+                    onPress: () {
+                      FirebaseAuthMethods(FirebaseAuth.instance)
+                          .signInWithGoogle(context);
+                    }),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
