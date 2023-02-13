@@ -5,7 +5,11 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'dart:async';
 
 class OtpVerificationScreen extends StatefulWidget {
-  const OtpVerificationScreen({super.key});
+  final TextEditingController codeController;
+  final VoidCallback onPressed;
+
+  const OtpVerificationScreen(
+      {super.key, required this.codeController, required this.onPressed});
 
   @override
   State<OtpVerificationScreen> createState() => _OtpVerificationScreenState();
@@ -37,6 +41,13 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   void initState() {
     startTimer();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _timer!.cancel();
+    widget.codeController.dispose();
   }
 
   @override
@@ -79,8 +90,10 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   cursorColor: tPrimaryColor,
                   borderColor: tPrimaryColor,
                   focusedBorderColor: tPrimaryColor,
+
                   // get complete code enter by user
                   onSubmit: (code) {
+                    widget.codeController.text = code;
                     print(code);
                   },
                 ),
@@ -108,7 +121,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                CustomButton(text: "NEXT", onPress: () {})
+                CustomButton(text: "NEXT", onPress: widget.onPressed)
               ],
             ),
           ),

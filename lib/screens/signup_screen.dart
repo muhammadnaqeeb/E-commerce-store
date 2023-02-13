@@ -29,8 +29,16 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   void dispose() {
     super.dispose();
+    nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
+    phoneController.dispose();
+  }
+
+  void phoneSignIn() {
+    FirebaseAuthMethods(FirebaseAuth.instance)
+        .phoneSignIn(context, phoneController.text);
+    print("hiiii");
   }
 
   @override
@@ -71,7 +79,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 CustomTextField(
                   label: "Enter your Email",
                   icon: const Icon(Icons.email_rounded),
-                  obscureText: true,
+                  obscureText: false,
                   controller: emailController,
                 ),
                 const SizedBox(
@@ -96,12 +104,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
                 CustomButton(
                   text: "SIGNUP",
-                  onPress: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OtpVerificationScreen()));
-                  },
+                  onPress: phoneSignIn,
                 ),
                 const SizedBox(
                   height: 12,
