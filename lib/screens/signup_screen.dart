@@ -1,16 +1,13 @@
-import 'package:ecommerce_app/screens/otp_verification_screen.dart';
+import 'package:ecommerce_app/screens/home_screen.dart';
 import 'package:ecommerce_app/widgets/country_textField.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:provider/provider.dart';
 
 import '../constants.dart';
 import '../services/firebase_auth_methods.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_textfield.dart';
 import '../widgets/outline_btn_with_image.dart';
-import 'login_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -36,9 +33,9 @@ class _SignupScreenState extends State<SignupScreen> {
   }
 
   void phoneSignIn() {
-    FirebaseAuthMethods(FirebaseAuth.instance)
+    context
+        .read<FirebaseAuthMethods>()
         .phoneSignIn(context, phoneController.text);
-    print("hiiii");
   }
 
   @override
@@ -123,7 +120,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     label: "Sign Up with google",
                     onPress: () {
-                      FirebaseAuthMethods(FirebaseAuth.instance)
+                      context
+                          .read<FirebaseAuthMethods>()
                           .signInWithGoogle(context);
                     }),
                 Row(

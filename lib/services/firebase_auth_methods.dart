@@ -2,12 +2,14 @@ import 'package:ecommerce_app/screens/otp_verification_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import '../utils/showOTPDialog.dart';
 import '../utils/showSnackBar.dart';
 
 class FirebaseAuthMethods {
   final FirebaseAuth _auth;
   FirebaseAuthMethods(this._auth);
+
+  // STATE PRESISTENCE
+  Stream<User?> get authState => FirebaseAuth.instance.authStateChanges();
 
   // GOOGLE SIGN-IN
   Future<void> signInWithGoogle(BuildContext context) async {
@@ -48,18 +50,6 @@ class FirebaseAuthMethods {
       },
       // work on IOS
       codeSent: ((String verificationId, int? resendToken) async {
-        // showOTPDialog(
-        //   codeController: codeControler,
-        //   context: context,
-        //   onPressed: () async {
-        //     PhoneAuthCredential credential = PhoneAuthProvider.credential(
-        //       verificationId: verificationId,
-        //       smsCode: codeControler.text.trim(),
-        //     );
-        //     await _auth.signInWithCredential(credential);
-        //     Navigator.of(context).pop();
-        //   },
-        // );
         Navigator.push(
             context,
             MaterialPageRoute(

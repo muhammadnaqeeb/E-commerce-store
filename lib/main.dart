@@ -1,8 +1,12 @@
-import 'package:ecommerce_app/screens/welcome_screen.dart';
+import 'package:ecommerce_app/screens/signup_screen.dart';
+import 'package:ecommerce_app/services/firebase_auth_methods.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'firebase_options.dart';
+import 'screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,12 +21,36 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'e-store',
-      theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+    return MultiProvider(
+      providers: [
+        Provider<FirebaseAuthMethods>(
+          create: (_) => FirebaseAuthMethods(FirebaseAuth.instance),
+        ),
+        StreamProvider(
+          create: (context) => context.read<FirebaseAuthMethods>().authState,
+          initialData: null,
+        )
+      ],
+      child: MaterialApp(
+        title: 'e-store',
+        theme: ThemeData(
+          primarySwatch: Colors.deepOrange,
+        ),
+        home: const AuthWrapper(),
       ),
-      home: WelcomeScreen(),
     );
+  }
+}
+
+class AuthWrapper extends StatelessWidget {
+  const AuthWrapper({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final firebaseUser = context.watch<User?>();
+    if (firebaseUser != null) {
+      return const HomeScreen();
+    }
+    return const SignupScreen();
   }
 }

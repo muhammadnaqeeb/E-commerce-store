@@ -1,12 +1,7 @@
 import 'package:ecommerce_app/screens/forgetPasswordScreens/forget_password_mail_screen.dart';
-import 'package:ecommerce_app/screens/signup_screen.dart';
 import 'package:ecommerce_app/widgets/custom_button.dart';
-import 'package:ecommerce_app/widgets/custom_outline_btn.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:provider/provider.dart';
 
 import '../constants.dart';
 import '../services/firebase_auth_methods.dart';
@@ -151,7 +146,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     label: "Sign In with google",
                     onPress: () {
-                      FirebaseAuthMethods(FirebaseAuth.instance)
+                      context
+                          .read<FirebaseAuthMethods>()
                           .signInWithGoogle(context);
                     }),
                 Row(
