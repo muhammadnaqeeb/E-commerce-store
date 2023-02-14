@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/screens/navigation_and_app_bar.dart';
 import 'package:ecommerce_app/screens/signup_screen.dart';
 import 'package:ecommerce_app/services/firebase_auth_methods.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -49,7 +50,7 @@ class AuthWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User?>();
     if (firebaseUser != null) {
-      return const HomeScreen();
+      return const NavigationAndAppbar();
     }
     return const SignupScreen();
   }

@@ -6,9 +6,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Logedin"),
-      ),
+      body: Text("Comming from home screen"),
     );
   }
 }
