@@ -13,18 +13,28 @@ class SliderProductModel {
 
 List<SliderProductModel> SliderProductList = [
   SliderProductModel(
-    imagePath: "assets/images/laptop.jpg",
+    imagePath: "assets/images/ferniture.jpg",
     title: "Furniture",
     price: 600,
   ),
   SliderProductModel(
-    imagePath: "assets/images/laptop.jpg",
-    title: "Laptops",
-    price: 500,
+    imagePath: "assets/images/cloths.jpg",
+    title: "Cloths",
+    price: 50,
   ),
   SliderProductModel(
-    imagePath: "assets/images/laptop.jpg",
-    title: "Mobile",
+    imagePath: "assets/images/applicence.jpg",
+    title: "Appliences",
     price: 400,
+  ),
+  SliderProductModel(
+    imagePath: "assets/images/watch.png",
+    title: "Apple Watch",
+    price: 100,
+  ),
+  SliderProductModel(
+    imagePath: "assets/images/airpods.png",
+    title: "Airpods",
+    price: 120,
   ),
 ];

@@ -16,9 +16,9 @@ class _NavigationAndAppbarState extends State<NavigationAndAppbar> {
   int c_index = 0;
   final screens = [
     HomeScreen(),
-    Center(child: Text("Feeddd")),
-    Center(child: Text("Chattt")),
-    Center(child: Text("profileee"))
+    const Center(child: Text("Feeddd")),
+    const Center(child: Text("Chattt")),
+    const Center(child: Text("profileee"))
   ];
   @override
   Widget build(BuildContext context) {
@@ -26,14 +26,21 @@ class _NavigationAndAppbarState extends State<NavigationAndAppbar> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: const Padding(
-          padding: EdgeInsets.only(left: 20),
-          child: Image(
-            image: AssetImage(
-              "assets/images/avatar.png",
-            ),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 8),
+          child: Text(
+            "E-store app",
+            style: TextStyle(color: Colors.black),
           ),
         ),
+        // leading: const Padding(
+        //   padding: EdgeInsets.only(left: 20),
+        //   child: Image(
+        //     image: AssetImage(
+        //       "assets/images/avatar.png",
+        //     ),
+        //   ),
+        // ),
         actions: const [
           Padding(
             padding: EdgeInsets.all(18.0),
