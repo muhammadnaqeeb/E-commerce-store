@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
+import 'package:ecommerce_app/screens/cart_screen.dart';
 import 'package:ecommerce_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -17,7 +18,7 @@ class _NavigationAndAppbarState extends State<NavigationAndAppbar> {
   final screens = [
     HomeScreen(),
     const Center(child: Text("Feeddd")),
-    const Center(child: Text("Chattt")),
+    CartScreen(),
     const Center(child: Text("profileee"))
   ];
   @override
