@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/screens/navigation_and_app_bar.dart';
 import 'package:ecommerce_app/screens/signup_screen.dart';
+import 'package:ecommerce_app/screens/welcome_screen.dart';
 import 'package:ecommerce_app/services/firebase_auth_methods.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'e-store',
         theme: ThemeData(
           primarySwatch: Colors.deepOrange,
@@ -50,6 +52,6 @@ class AuthWrapper extends StatelessWidget {
     if (firebaseUser != null) {
       return const NavigationAndAppbar();
     }
-    return const SignupScreen();
+    return const WelcomeScreen();
   }
 }
