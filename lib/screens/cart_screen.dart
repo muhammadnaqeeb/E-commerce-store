@@ -31,17 +31,16 @@ class _CartScreenState extends State<CartScreen> {
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.only(bottom: 10),
                 child: Dismissible(
-                  key: Key("1"),
+                  key: const Key("1"),
                   direction: DismissDirection.endToStart,
-                  child: CartItemCard(),
                   background: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     decoration: BoxDecoration(
-                      color: Color(0xFFFFE6E6),
+                      color: const Color(0xFFFFE6E6),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         Spacer(),
                         Icon(
                           Icons.delete_rounded,
@@ -53,6 +52,7 @@ class _CartScreenState extends State<CartScreen> {
                   onDismissed: (direction) {
                     //remore that item
                   },
+                  child: const CartItemCard(),
                 ),
               ),
             ),

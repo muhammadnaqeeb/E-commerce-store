@@ -1,9 +1,6 @@
-import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/screens/cart_screen.dart';
 import 'package:ecommerce_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NavigationAndAppbar extends StatefulWidget {
@@ -14,18 +11,18 @@ class NavigationAndAppbar extends StatefulWidget {
 }
 
 class _NavigationAndAppbarState extends State<NavigationAndAppbar> {
-  int c_index = 0;
+  int cIndex = 0;
   final screens = [
-    HomeScreen(),
+    const HomeScreen(),
     const Center(child: Text("Feeddd")),
-    CartScreen(),
+    const CartScreen(),
     const Center(child: Text("profileee"))
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0,
         title: const Padding(
           padding: EdgeInsets.only(left: 8),
@@ -57,13 +54,13 @@ class _NavigationAndAppbarState extends State<NavigationAndAppbar> {
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black26,
-        selectedLabelStyle: TextStyle(fontSize: 12),
+        selectedLabelStyle: const TextStyle(fontSize: 12),
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        currentIndex: c_index,
+        currentIndex: cIndex,
         onTap: ((value) {
           setState(() {
-            c_index = value;
+            cIndex = value;
           });
         }),
         items: const [
@@ -71,7 +68,7 @@ class _NavigationAndAppbarState extends State<NavigationAndAppbar> {
               icon: Padding(
                 padding: EdgeInsets.all(10.0),
                 child: FaIcon(
-                  FontAwesomeIcons.home,
+                  FontAwesomeIcons.house,
                   size: 20,
                 ),
               ),
@@ -110,7 +107,7 @@ class _NavigationAndAppbarState extends State<NavigationAndAppbar> {
         ],
       ),
       body: IndexedStack(
-        index: c_index,
+        index: cIndex,
         children: screens,
       ),
     );

@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                ForgetPasswordMailScreen()));
+                                                const ForgetPasswordMailScreen()));
                                   }),
                               const SizedBox(
                                 height: 20,

@@ -9,7 +9,7 @@ void showOTPDialog({
     context: context,
     barrierDismissible: false,
     builder: (context) => AlertDialog(
-      title: Text("Enter OTP"),
+      title: const Text("Enter OTP"),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

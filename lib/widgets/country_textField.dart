@@ -27,7 +27,7 @@ class CountryTextField extends StatelessWidget {
       controller: controller,
       disableLengthCheck: true,
       onCountryChanged: (country) {
-        print('Country changed to: ' + country.name);
+        print('Country changed to:  ${country.name}');
       },
       // onChanged: (phone) {
       //   print(phone.completeNumber);

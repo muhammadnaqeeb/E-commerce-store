@@ -19,6 +19,8 @@ class ProductCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
+      color: Colors.white,
+      elevation: 0.2,
       child: Padding(
         padding: const EdgeInsets.all(4.0),
         child: Column(
@@ -71,8 +73,8 @@ class ProductCard extends StatelessWidget {
                         "\$ $price",
                         style: kSubHeadingStyle,
                       ),
-                      Row(
-                        children: const [
+                      const Row(
+                        children: [
                           Icon(
                             Icons.star_rounded,
                             color: Color.fromARGB(255, 255, 217, 3),

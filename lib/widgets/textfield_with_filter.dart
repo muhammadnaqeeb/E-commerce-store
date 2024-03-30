@@ -23,7 +23,7 @@ class TextWithFilter extends StatelessWidget {
               prefixIcon: const Padding(
                 padding: EdgeInsets.all(15.0),
                 child: FaIcon(
-                  FontAwesomeIcons.search,
+                  FontAwesomeIcons.magnifyingGlass,
                   size: 20,
                 ),
               ),

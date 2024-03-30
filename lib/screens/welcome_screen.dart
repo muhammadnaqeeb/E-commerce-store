@@ -26,8 +26,8 @@ class WelcomeScreen extends StatelessWidget {
                   image: const AssetImage("assets/images/welcome.png"),
                   height: height * 0.6,
                 ),
-                Column(
-                  children: const [
+                const Column(
+                  children: [
                     Text(
                       "Shop, Swipe & Smile.",
                       style: kHeadingStyle,
@@ -50,7 +50,7 @@ class WelcomeScreen extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LoginScreen()));
+                                  builder: (context) => const LoginScreen()));
                         },
                       ),
                     ),
@@ -64,7 +64,7 @@ class WelcomeScreen extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => SignupScreen()));
+                                  builder: (context) => const SignupScreen()));
                         },
                       ),
                     ),

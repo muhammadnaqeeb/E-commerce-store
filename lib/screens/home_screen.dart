@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
               // const SizedBox(
               //   height: 10,
               // ),
-              TextWithFilter(),
+              const TextWithFilter(),
               const SizedBox(
                 height: 8,
               ),
@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                 child: Swiper(
                   itemCount: 3,
                   itemBuilder: ((context, index) {
-                    var singleSlideProduct = SliderProductList[index];
+                    var singleSlideProduct = sliderProductList[index];
                     return FeaturedSlides(
                       title: singleSlideProduct.title,
                       price: singleSlideProduct.price,
@@ -114,16 +114,16 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ProductCard(
-                      slideImagePath: SliderProductList[3].imagePath,
-                      title: SliderProductList[3].title,
-                      price: SliderProductList[3].price,
+                      slideImagePath: sliderProductList[3].imagePath,
+                      title: sliderProductList[3].title,
+                      price: sliderProductList[3].price,
                     ),
                   ),
                   Expanded(
                     child: ProductCard(
-                      slideImagePath: SliderProductList[4].imagePath,
-                      title: SliderProductList[4].title,
-                      price: SliderProductList[4].price,
+                      slideImagePath: sliderProductList[4].imagePath,
+                      title: sliderProductList[4].title,
+                      price: sliderProductList[4].price,
                     ),
                   ),
                 ],

@@ -2,7 +2,7 @@ import 'package:ecommerce_app/screens/otp_verification_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import '../utils/showSnackBar.dart';
+import '../utils/show_snackbar.dart';
 
 class FirebaseAuthMethods {
   final FirebaseAuth _auth;
@@ -25,8 +25,7 @@ class FirebaseAuthMethods {
         idToken: googleAuth?.idToken,
       );
       // Once signed in
-      UserCredential userCredential =
-          await _auth.signInWithCredential(credential);
+      UserCredential _ = await _auth.signInWithCredential(credential);
     } on FirebaseAuthException catch (e) {
       showSnackBar(context, e.message!);
     }

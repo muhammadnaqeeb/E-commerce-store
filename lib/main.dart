@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/screens/navigation_and_app_bar.dart';
-import 'package:ecommerce_app/screens/signup_screen.dart';
 import 'package:ecommerce_app/screens/welcome_screen.dart';
 import 'package:ecommerce_app/services/firebase_auth_methods.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -35,7 +34,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'e-store',
         theme: ThemeData(
-          primarySwatch: Colors.deepOrange,
+          colorScheme: ColorScheme.fromSwatch(
+              primarySwatch: Colors.deepOrange, backgroundColor: Colors.white),
         ),
         home: const AuthWrapper(),
       ),

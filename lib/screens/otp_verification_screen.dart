@@ -94,7 +94,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   // get complete code enter by user
                   onSubmit: (code) {
                     widget.codeController.text = code;
-                    print(code);
+                    // print(code);
                   },
                 ),
                 const SizedBox(

@@ -11,7 +11,7 @@ class SliderProductModel {
   });
 }
 
-List<SliderProductModel> SliderProductList = [
+List<SliderProductModel> sliderProductList = [
   SliderProductModel(
     imagePath: "assets/images/ferniture.jpg",
     title: "Furniture",
